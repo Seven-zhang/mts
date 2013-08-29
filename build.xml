@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="build" name="mts">
+    <property environment="env"/>
+    <property name="M2_REPO" value="F:/maven/apache-maven-3.0.5/repo"/> 
+	<property name="src.dir"  location="src"/>
+	<property name="src.main"  location="${src.dir}/main/java"/>
+	<property name="src.test"  location="${src.dir}/test/java"/>	
+    <property name="Build.dir" location="target"/>
+    <property name="Build.classes" location="${Build.dir}/classes"/>
+	<property name="Build.test-classes" location="${Build.dir}/test-classes"/>
+    <property name="Build.Report" location="${Build.dir}/Report"/>
+  	<property name="Build.ErrorImg" location="${Build.dir}/ErrorImg"/>
+  	<property name="Build.Log" location="${Build.dir}/Log"/>
+	<property name="Build.docs" location="${Build.dir}/docs"/>
+	<property name="dist.dir" location="${Build.dir}/dist"/>
+	<property name="lib.dir" location="lib"/>
+	<property name="testng.output.dir" location="test-output"/>
+	<property name="testng.file" value="testng.xml"/>
+		
+	<path id="mts.classpath">
+	     <pathelement location="${Build.test-classes}"/>
+	     <pathelement location="${Build.classes}"/>
+		 <fileset dir="${lib.dir}" includes="*.jar" /> 
+	</path>
+    <pathconvert property="lib" pathsep=" ">  
+        <mapper>  
+            <chainedmapper>  
+                <flattenmapper />  
+                <globmapper from="*" to="lib/*" />  
+            </chainedmapper>  
+        </mapper>   
+        <fileset dir="${lib.dir}">  
+            <include name="*.jar" />  
+        </fileset>  
+    </pathconvert>  
+    <property name="libs" location="${lib}" />
+	<echo>libs  ${libs}</echo> 
+    <target name="clean">
+    	<echo message="删除编译目录开始..."/>
+        <delete dir="${Build.dir}"/>
+    	<echo message="删除编译目录成功..."/>
+    </target>
+    <target depends="clean" name="init">
+    	<echo message="创建编译目录开始..."/>
+        <mkdir dir="${Build.test-classes}"/>
+        <mkdir dir="${Build.classes}"/>
+    	<mkdir dir="${Build.Report}"/>
+    	<mkdir dir="${Build.ErrorImg}"/>
+    	<mkdir dir="${Build.Log}"/>
+    	<mkdir dir="${Build.docs}"/>    	
+    	<echo message="创建编译目录成功..."/>
+    </target>
+    <target depends="init" name="compile">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+    	<echo message="编译文件开始..."/>
+        <javac srcdir="${src.test}" destdir="${Build.test-classes}" includeantruntime="false"
+        	   classpathref="mts.classpath" encoding="utf-8">
+        </javac> 
+        <javac srcdir="${src.main}" destdir="${Build.classes}" includeantruntime="false" encoding="utf-8">
+            <classpath refid="mts.classpath"/>
+        </javac>
+    	<echo message="编译文件执行成功..."/>
+    </target>	
+	<target depends="compile" name="docs">
+		<echo message="生成API文档开始..."/>
+	    <javadoc sourcepath="${src.main}" destdir="${Build.docs}" windowtitle="mts API" 
+	    	     encoding="utf-8"  docencoding="GBK">
+	    	<classpath refid="mts.classpath"/>
+	    </javadoc>
+	    <echo message="生成API文档成功..."/>
+	</target>
+	<tstamp /> 
+	<property name="jarfilename" value="${ant.project.name}-${DSTAMP}${TSTAMP}.jar" />
+	<target name="jar" depends="compile">	
+		<mkdir dir="${dist.dir}" />
+		<echo message="打包jar文件开始..."/>		
+	    <jar destfile="${dist.dir}\${jarfilename}" basedir="${Build.classes}">
+	    	<manifest>
+	    	   <attribute name="Main-Class" value="com.ctsi.test.Hello" />
+	    	   <attribute name="Class-Path" value="${libs}" />
+	    	</manifest>
+	    </jar>
+	    <echo message="打包jar文件成功..."/>
+	 </target>
+	<target name="run" depends="compile,jar">		
+		<echo message="运行jar文件开始..."/>
+        <java jar="${dist.dir}\${jarfilename}" fork="true">
+        	<classpath refid="mts.classpath"/>
+	    </java>
+        <echo message="运行jar文件成功..."/>		
+	</target>
+	<target name="test" depends="compile">
+		<echo message="测试jar文件开始..."/>
+	     <junit>
+	         <classpath refid="mts.classpath"/>
+	         <formatter type="xml" usefile="true" />
+			 <batchtest todir="${Build.Report}">
+	             <fileset dir="${Build.classes}" includes="**/*Test.*">
+	             </fileset>
+	         </batchtest>
+	     </junit>
+	     <junitreport todir="${Build.Report}">
+	         <fileset dir="${Build.Report}" includes="TEST-*.xml">
+	         </fileset>
+	         <report format="frames" todir="${Build.Report}/html" />
+	     </junitreport>
+		<echo message="测试jar文件成功..."/>
+	</target>
+	<!--发送mail-->	
+    <target name="mail" depends="transform">
+    	<echo message="发送report邮件开始..."/>
+		 <loadfile property="report" srcFile="${testng.output.dir}/emailable-report.html"/>
+         <mail mailhost="mail3.ctsi.com.cn" mailport="25" user="zhangqingyun" password="mail.2013" 
+         	   subject="Test sendmail" messagemimetype="text/html">
+             <from address="zhangqingyun@ctsi.com.cn" />
+             <to address="zhangqingyun@ctsi.com.cn" />
+         	 <message>
+         	 	  <![CDATA[
+         	      <p>Send email test result</p>
+         	 	  <pre>${report}</pre>
+         	 	  <p>Thanks&Regards!</p>
+         	 	  ]]>
+         	 </message>
+         	 <fileset dir="${testng.output.dir}">
+         	      <include name="**/emailable-report.html" />
+         	 </fileset>
+             <fileset dir="${Build.Report}">
+                  <include name="**/*.xml" />
+             </fileset>
+          	 <fileset dir="${Build.Log}">
+              	  <include name="**/*.*" />
+          	 </fileset>
+          	 <fileset dir="${Build.ErrorImg}">
+              	  <include name="**/*.*" />
+          	 </fileset>
+         </mail>
+    	<echo message="发送report邮件成功..."/>
+    </target>
+	
+		<!--调用testng.xml配置文件-->	
+	<taskdef resource="testngtasks" classpath="${lib.dir}/testng.jar"/>	 	 
+	    <target name="testng" depends="compile">
+	    	<echo message="运行测试集开始..."/>
+	        <testng outputdir="${testng.output.dir}" classpathref="mts.classpath" delegateCommandSystemProperties="true">
+	            <xmlfileset dir="${src.dir}/main/resources" includes="${testng.file}"/>       
+	        </testng>
+	        <echo message="运行测试集完成..."/>	
+	</target>
+
+	
+	 	<!--通过testNgXslt工具转换美化测试报告-->
+	<target name="transform" depends="testng">
+			<echo message="转换测试报告开始..."/>
+	        <xslt in="${testng.output.dir}/testng-results.xml" style="${src.dir}/main/resources/testng-results.xsl"
+	              out="${testng.output.dir}/index1.html">
+	             <!-- you need to specify the directory here again -->
+	        	<param expression="${testng.output.dir}/" name="testNgXslt.outputDir" />
+	            <classpath refid="mts.classpath"/>
+	        </xslt>
+			<echo message="转换测试报告成功..."/>
+	</target>
+	   
+		<!--需执行的target-->
+	<target depends="compile,testng,transform,mail" name="build"/>        	
+</project>

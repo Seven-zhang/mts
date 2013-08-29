@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Mts Suite" parallel="false">
+  <test name="MTs">
+
+  
+    <classes>
+ <!--     <class name="com.ctsi.test.MessageCenter">
+        <methods>
+          <include name="verifyHomepageTitle" />       
+        </methods>
+      </class>
+  -->      
+      <class name="com.ctsi.testlink.DemoSelenium">
+        <methods>
+          <include name="verifyHomepageTitle" />       
+        </methods>
+      </class>
+    </classes>
+  </test>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</suite>

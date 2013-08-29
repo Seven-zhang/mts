@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[测试用例：登录外勤助手]]>
+    </line>
+    <line>
+      <![CDATA[测试步骤1：输入用户名]]>
+    </line>
+    <line>
+      <![CDATA[测试步骤2：输入密码]]>
+    </line>
+    <line>
+      <![CDATA[测试步骤3：选择区域]]>
+    </line>
+    <line>
+      <![CDATA[测试步骤4：输入验证码]]>
+    </line>
+    <line>
+      <![CDATA[测试步骤5：点击登录按钮]]>
+    </line>
+    <line>
+      <![CDATA[[开始验证]:验证外勤助手主页面标题是否正确]]>
+    </line>
+    <line>
+      <![CDATA[[验证通过]: 期望值 :<中国电信外勤助手> 实际值:<中国电信外勤助手>]]>
+    </line>
+    <line>
+      <![CDATA[登录外勤助手成功]]>
+    </line>
+  </reporter-output>
+  <suite name="Mts Suite" duration-ms="20794" started-at="2013-08-29T02:37:38Z" finished-at="2013-08-29T02:37:59Z">
+    <groups>
+    </groups>
+    <test name="MTs" duration-ms="20794" started-at="2013-08-29T02:37:38Z" finished-at="2013-08-29T02:37:59Z">
+      <class name="com.ctsi.testlink.DemoSelenium">
+        <test-method status="PASS" signature="setBaseURL()[pri:0, instance:com.ctsi.testlink.DemoSelenium@9c0ec97]" name="setBaseURL" is-config="true" duration-ms="4065" started-at="2013-08-29T10:37:38Z" finished-at="2013-08-29T10:37:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBaseURL -->
+        <test-method status="PASS" signature="verifyHomepageTitle()[pri:0, instance:com.ctsi.testlink.DemoSelenium@9c0ec97]" name="verifyHomepageTitle" duration-ms="15650" started-at="2013-08-29T10:37:42Z" finished-at="2013-08-29T10:37:58Z">
+          <reporter-output>
+            <line>
+              <![CDATA[测试用例：登录外勤助手]]>
+            </line>
+            <line>
+              <![CDATA[测试步骤1：输入用户名]]>
+            </line>
+            <line>
+              <![CDATA[测试步骤2：输入密码]]>
+            </line>
+            <line>
+              <![CDATA[测试步骤3：选择区域]]>
+            </line>
+            <line>
+              <![CDATA[测试步骤4：输入验证码]]>
+            </line>
+            <line>
+              <![CDATA[测试步骤5：点击登录按钮]]>
+            </line>
+            <line>
+              <![CDATA[[开始验证]:验证外勤助手主页面标题是否正确]]>
+            </line>
+            <line>
+              <![CDATA[[验证通过]: 期望值 :<中国电信外勤助手> 实际值:<中国电信外勤助手>]]>
+            </line>
+            <line>
+              <![CDATA[登录外勤助手成功]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- verifyHomepageTitle -->
+        <test-method status="PASS" signature="endSession()[pri:0, instance:com.ctsi.testlink.DemoSelenium@9c0ec97]" name="endSession" is-config="true" duration-ms="1069" started-at="2013-08-29T10:37:58Z" finished-at="2013-08-29T10:37:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endSession -->
+      </class> <!-- com.ctsi.testlink.DemoSelenium -->
+    </test> <!-- MTs -->
+  </suite> <!-- Mts Suite -->
+</testng-results>

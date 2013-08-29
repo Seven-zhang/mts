@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Mts Suite]">
+  <test name="MTs(failed)">
+    <classes>
+      <class name="com.ctsi.testlink.DemoSelenium">
+        <methods>
+          <include name="endSession"/>
+          <include name="verifyHomepageTitle"/>
+          <include name="setBaseURL"/>
+        </methods>
+      </class> <!-- com.ctsi.testlink.DemoSelenium -->
+    </classes>
+  </test> <!-- MTs(failed) -->
+</suite> <!-- Failed suite [Mts Suite] -->

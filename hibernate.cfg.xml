@@ -1,0 +1,25 @@
+
+<hibernate-configuration>
+	<session-factory>
+		<!-- local connection properties -->
+		<property name="hibernate.connection.url">
+			jdbc:oracle:thin:@192.9.100.172:1521:inds
+		</property>
+		<property name="hibernate.connection.driver_class">
+			oracle.jdbc.driver.OracleDriver
+		</property>
+		<property name="hibernate.connection.username">mtstest</property>
+		<property name="hibernate.connection.password">mtstest</property>
+		<!-- property name="hibernate.connection.pool_size"></property -->
+		<!-- dialect for Oracle (any version) -->
+		<property name="dialect">
+			org.hibernate.dialect.OracleDialect
+		</property>
+		<property name="hibernate.show_sql">false</property>
+		<property name="hibernate.transaction.factory_class">
+			org.hibernate.transaction.JDBCTransactionFactory
+		</property>
+		<mapping resource="hibernate.cfg.xml" />
+		<mapping resource="Location04036.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>
