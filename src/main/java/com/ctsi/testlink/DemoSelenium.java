@@ -32,6 +32,7 @@ import testlink.api.java.client.TestLinkAPIResults;
 			  driver = new InternetExplorerDriver(ieCapabilities);
 			  driver.manage().window().maximize();	  
 			  driver.get(baseurl);
+			  System.out.println("git");
 		  }
 		  
 		  //登录系统
