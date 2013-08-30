@@ -2,78 +2,78 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
     <line>
-      <![CDATA[æµ‹è¯•ç”¨ä¾‹ï¼šç™»å½•å¤–å‹¤åŠ©æ‰‹]]>
+      <![CDATA[²âÊÔÓÃÀý£ºµÇÂ¼ÍâÇÚÖúÊÖ]]>
     </line>
     <line>
-      <![CDATA[æµ‹è¯•æ­¥éª¤1ï¼šè¾“å…¥ç”¨æˆ·å]]>
+      <![CDATA[²âÊÔ²½Öè1£ºÊäÈëÓÃ»§Ãû]]>
     </line>
     <line>
-      <![CDATA[æµ‹è¯•æ­¥éª¤2ï¼šè¾“å…¥å¯†ç ]]>
+      <![CDATA[²âÊÔ²½Öè2£ºÊäÈëÃÜÂë]]>
     </line>
     <line>
-      <![CDATA[æµ‹è¯•æ­¥éª¤3ï¼šé€‰æ‹©åŒºåŸŸ]]>
+      <![CDATA[²âÊÔ²½Öè3£ºÑ¡ÔñÇøÓò]]>
     </line>
     <line>
-      <![CDATA[æµ‹è¯•æ­¥éª¤4ï¼šè¾“å…¥éªŒè¯ç ]]>
+      <![CDATA[²âÊÔ²½Öè4£ºÊäÈëÑéÖ¤Âë]]>
     </line>
     <line>
-      <![CDATA[æµ‹è¯•æ­¥éª¤5ï¼šç‚¹å‡»ç™»å½•æŒ‰é’®]]>
+      <![CDATA[²âÊÔ²½Öè5£ºµã»÷µÇÂ¼°´Å¥]]>
     </line>
     <line>
-      <![CDATA[[å¼€å§‹éªŒè¯]:éªŒè¯å¤–å‹¤åŠ©æ‰‹ä¸»é¡µé¢æ ‡é¢˜æ˜¯å¦æ­£ç¡®]]>
+      <![CDATA[[¿ªÊ¼ÑéÖ¤]:ÑéÖ¤ÍâÇÚÖúÊÖÖ÷Ò³Ãæ±êÌâÊÇ·ñÕýÈ·]]>
     </line>
     <line>
-      <![CDATA[[éªŒè¯é€šè¿‡]: æœŸæœ›å€¼ :<ä¸­å›½ç”µä¿¡å¤–å‹¤åŠ©æ‰‹> å®žé™…å€¼:<ä¸­å›½ç”µä¿¡å¤–å‹¤åŠ©æ‰‹>]]>
+      <![CDATA[[ÑéÖ¤Í¨¹ý]: ÆÚÍûÖµ :<ÖÐ¹úµçÐÅÍâÇÚÖúÊÖ> Êµ¼ÊÖµ:<ÖÐ¹úµçÐÅÍâÇÚÖúÊÖ>]]>
     </line>
     <line>
-      <![CDATA[ç™»å½•å¤–å‹¤åŠ©æ‰‹æˆåŠŸ]]>
+      <![CDATA[µÇÂ¼ÍâÇÚÖúÊÖ³É¹¦]]>
     </line>
   </reporter-output>
-  <suite name="Mts Suite" duration-ms="20794" started-at="2013-08-29T02:37:38Z" finished-at="2013-08-29T02:37:59Z">
+  <suite name="Default suite" duration-ms="19151" started-at="2013-08-30T07:20:30Z" finished-at="2013-08-30T07:20:49Z">
     <groups>
     </groups>
-    <test name="MTs" duration-ms="20794" started-at="2013-08-29T02:37:38Z" finished-at="2013-08-29T02:37:59Z">
+    <test name="Default test" duration-ms="19151" started-at="2013-08-30T07:20:30Z" finished-at="2013-08-30T07:20:49Z">
       <class name="com.ctsi.testlink.DemoSelenium">
-        <test-method status="PASS" signature="setBaseURL()[pri:0, instance:com.ctsi.testlink.DemoSelenium@9c0ec97]" name="setBaseURL" is-config="true" duration-ms="4065" started-at="2013-08-29T10:37:38Z" finished-at="2013-08-29T10:37:42Z">
+        <test-method status="PASS" signature="setBaseURL()[pri:0, instance:com.ctsi.testlink.DemoSelenium@27b15692]" name="setBaseURL" is-config="true" duration-ms="3861" started-at="2013-08-30T15:20:30Z" finished-at="2013-08-30T15:20:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBaseURL -->
-        <test-method status="PASS" signature="verifyHomepageTitle()[pri:0, instance:com.ctsi.testlink.DemoSelenium@9c0ec97]" name="verifyHomepageTitle" duration-ms="15650" started-at="2013-08-29T10:37:42Z" finished-at="2013-08-29T10:37:58Z">
+        <test-method status="PASS" signature="verifyHomepageTitle()[pri:0, instance:com.ctsi.testlink.DemoSelenium@27b15692]" name="verifyHomepageTitle" duration-ms="14212" started-at="2013-08-30T15:20:34Z" finished-at="2013-08-30T15:20:48Z">
           <reporter-output>
             <line>
-              <![CDATA[æµ‹è¯•ç”¨ä¾‹ï¼šç™»å½•å¤–å‹¤åŠ©æ‰‹]]>
+              <![CDATA[²âÊÔÓÃÀý£ºµÇÂ¼ÍâÇÚÖúÊÖ]]>
             </line>
             <line>
-              <![CDATA[æµ‹è¯•æ­¥éª¤1ï¼šè¾“å…¥ç”¨æˆ·å]]>
+              <![CDATA[²âÊÔ²½Öè1£ºÊäÈëÓÃ»§Ãû]]>
             </line>
             <line>
-              <![CDATA[æµ‹è¯•æ­¥éª¤2ï¼šè¾“å…¥å¯†ç ]]>
+              <![CDATA[²âÊÔ²½Öè2£ºÊäÈëÃÜÂë]]>
             </line>
             <line>
-              <![CDATA[æµ‹è¯•æ­¥éª¤3ï¼šé€‰æ‹©åŒºåŸŸ]]>
+              <![CDATA[²âÊÔ²½Öè3£ºÑ¡ÔñÇøÓò]]>
             </line>
             <line>
-              <![CDATA[æµ‹è¯•æ­¥éª¤4ï¼šè¾“å…¥éªŒè¯ç ]]>
+              <![CDATA[²âÊÔ²½Öè4£ºÊäÈëÑéÖ¤Âë]]>
             </line>
             <line>
-              <![CDATA[æµ‹è¯•æ­¥éª¤5ï¼šç‚¹å‡»ç™»å½•æŒ‰é’®]]>
+              <![CDATA[²âÊÔ²½Öè5£ºµã»÷µÇÂ¼°´Å¥]]>
             </line>
             <line>
-              <![CDATA[[å¼€å§‹éªŒè¯]:éªŒè¯å¤–å‹¤åŠ©æ‰‹ä¸»é¡µé¢æ ‡é¢˜æ˜¯å¦æ­£ç¡®]]>
+              <![CDATA[[¿ªÊ¼ÑéÖ¤]:ÑéÖ¤ÍâÇÚÖúÊÖÖ÷Ò³Ãæ±êÌâÊÇ·ñÕýÈ·]]>
             </line>
             <line>
-              <![CDATA[[éªŒè¯é€šè¿‡]: æœŸæœ›å€¼ :<ä¸­å›½ç”µä¿¡å¤–å‹¤åŠ©æ‰‹> å®žé™…å€¼:<ä¸­å›½ç”µä¿¡å¤–å‹¤åŠ©æ‰‹>]]>
+              <![CDATA[[ÑéÖ¤Í¨¹ý]: ÆÚÍûÖµ :<ÖÐ¹úµçÐÅÍâÇÚÖúÊÖ> Êµ¼ÊÖµ:<ÖÐ¹úµçÐÅÍâÇÚÖúÊÖ>]]>
             </line>
             <line>
-              <![CDATA[ç™»å½•å¤–å‹¤åŠ©æ‰‹æˆåŠŸ]]>
+              <![CDATA[µÇÂ¼ÍâÇÚÖúÊÖ³É¹¦]]>
             </line>
           </reporter-output>
         </test-method> <!-- verifyHomepageTitle -->
-        <test-method status="PASS" signature="endSession()[pri:0, instance:com.ctsi.testlink.DemoSelenium@9c0ec97]" name="endSession" is-config="true" duration-ms="1069" started-at="2013-08-29T10:37:58Z" finished-at="2013-08-29T10:37:59Z">
+        <test-method status="PASS" signature="endSession()[pri:0, instance:com.ctsi.testlink.DemoSelenium@27b15692]" name="endSession" is-config="true" duration-ms="1064" started-at="2013-08-30T15:20:48Z" finished-at="2013-08-30T15:20:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endSession -->
       </class> <!-- com.ctsi.testlink.DemoSelenium -->
-    </test> <!-- MTs -->
-  </suite> <!-- Mts Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
