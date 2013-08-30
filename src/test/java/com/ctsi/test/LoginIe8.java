@@ -23,6 +23,7 @@ public class LoginIe8 extends TestCase
  	    ieCapabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,true);
  	    WebDriver driver = new InternetExplorerDriver(ieCapabilities);
  	    driver.manage().window().maximize();
+ 	    System.out.println("first fetch");
   
         // 登录
         driver.get("http://192.9.100.76:60007/mts/main/localInit.ds");
