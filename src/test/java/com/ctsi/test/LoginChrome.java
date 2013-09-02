@@ -31,6 +31,7 @@ public class LoginChrome extends TestCase{
        // driver.findElement(By.name("login")).submit();
         driver.findElement(By.name("PASSWD")).submit();
         System.out.println("Page Title is :" + driver.getTitle());
+        System.out.println("gouga");
         assertEquals("�й������������",driver.getTitle());
         
         //д����
