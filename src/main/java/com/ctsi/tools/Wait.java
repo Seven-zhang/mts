@@ -25,14 +25,14 @@ public class Wait {
 	
 	
 	public void waitById(final String locator){
-		(new WebDriverWait(driver, 15)).until(new ExpectedCondition<WebElement>(){  
+		(new WebDriverWait(driver, 30)).until(new ExpectedCondition<WebElement>(){  
 	          public WebElement apply(WebDriver d) {  
 	              return d.findElement(By.id(locator));  
 	          }}).click();
 	}
 	
 	public void waitByXpath(final String xpath){
-		(new WebDriverWait(driver, 5)).until(new ExpectedCondition<WebElement>(){  
+		(new WebDriverWait(driver, 50)).until(new ExpectedCondition<WebElement>(){  
 	          public WebElement apply(WebDriver d) {  
 	              return d.findElement(By.xpath(xpath));  
 	          }}).click();

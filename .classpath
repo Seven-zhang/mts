@@ -17,5 +17,6 @@
 	<classpathentry kind="lib" path="F:/workspace/mts/lib/saxon-8.7.jar"/>
 	<classpathentry kind="lib" path="F:/workspace/mts/lib/activation.jar"/>
 	<classpathentry kind="lib" path="F:/workspace/mts/lib/selenium-server-standalone-2.33.0.jar"/>
+	<classpathentry kind="lib" path="F:/workspace/mts/lib/mysql-connector-java-3.0.16-ga-bin.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

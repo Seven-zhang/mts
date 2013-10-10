@@ -92,13 +92,13 @@ public void verifyHomepageTitle() {
   @Test(groups = { "Message" },priority= 2,description = "选择某人写短信")
 public void writeSMS(){
 	  driver.findElement(By.id("a_topMenu_10")).click();
-	  waiter.waitById("a_leftMenu_item_1013");
+	  driver.findElement(By.id("a_leftMenu_item_1013")).click();	
       driver.switchTo().frame("if_mainPage");
       driver.findElement(By.id("btn_chooseOutworker")).click();
       framer.switchFrame("/html/body/div/div[2]/iframe");
       driver.findElement(By.name("outworkerNumber")).sendKeys("12301270003");
-      waiter.waitById("outworker_query");
-      waiter.waitById("worker_tree_2_check");
+      waiter.waitByXpath("//*[@id=\"outworker_query\"]");    
+      waiter.waitByXpath("//*[@id=\"worker_tree_2_check\"]");    
       driver.findElement(By.id("bt_save")).click(); 
       log.put("step1:选择人员", true);
       framer.switchMainFrame("if_mainPage");
@@ -122,7 +122,7 @@ public void writeSMS(){
       Log.comment("发送短信成功");
       waiter.waitByXpath("/html/body/div/div[2]/div/div[2]/a");
   }
-
+/**
   //写通知
   @Test(groups = { "Message" },priority= 5,description = "选择某人写通知")
 public void writeNote(){
@@ -260,7 +260,7 @@ public void deleteNoteTemplet(){
 		res.sendStatusToReport(testno, prefix+testno, duration/1000, "test", result,log);	
 	}
 
-
+*/
   //对象销毁
   @AfterTest
   public void endSession(){

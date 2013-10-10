@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="1" total="2" passed="1">
   <reporter-output>
-    <line>
-      <![CDATA[测试用例：登录外勤助手]]>
-    </line>
-    <line>
-      <![CDATA[测试步骤1：输入用户名]]>
-    </line>
-    <line>
-      <![CDATA[测试步骤2：输入密码]]>
-    </line>
-    <line>
-      <![CDATA[测试步骤3：选择区域]]>
-    </line>
-    <line>
-      <![CDATA[测试步骤4：输入验证码]]>
-    </line>
-    <line>
-      <![CDATA[测试步骤5：点击登录按钮]]>
-    </line>
     <line>
       <![CDATA[[开始验证]:验证外勤助手主页面标题是否正确]]>
     </line>
@@ -26,38 +8,26 @@
       <![CDATA[[验证通过]: 期望值 :<中国电信外勤助手> 实际值:<中国电信外勤助手>]]>
     </line>
     <line>
-      <![CDATA[登录外勤助手成功]]>
+      <![CDATA[登录系统成功]]>
     </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="19151" started-at="2013-08-30T07:20:30Z" finished-at="2013-08-30T07:20:49Z">
+  <suite name="Default suite" duration-ms="12189" started-at="2013-09-18T08:46:06Z" finished-at="2013-09-18T08:46:18Z">
     <groups>
+      <group name="Login">
+        <method signature="MessageCenter.verifyHomepageTitle()[pri:0, instance:com.ctsi.test.MessageCenter@64633e5e]" name="verifyHomepageTitle" class="com.ctsi.test.MessageCenter"/>
+      </group> <!-- Login -->
+      <group name="Message">
+        <method signature="MessageCenter.writeSMS()[pri:0, instance:com.ctsi.test.MessageCenter@64633e5e]" name="writeSMS" class="com.ctsi.test.MessageCenter"/>
+      </group> <!-- Message -->
     </groups>
-    <test name="Default test" duration-ms="19151" started-at="2013-08-30T07:20:30Z" finished-at="2013-08-30T07:20:49Z">
-      <class name="com.ctsi.testlink.DemoSelenium">
-        <test-method status="PASS" signature="setBaseURL()[pri:0, instance:com.ctsi.testlink.DemoSelenium@27b15692]" name="setBaseURL" is-config="true" duration-ms="3861" started-at="2013-08-30T15:20:30Z" finished-at="2013-08-30T15:20:34Z">
+    <test name="Default test" duration-ms="12189" started-at="2013-09-18T08:46:06Z" finished-at="2013-09-18T08:46:18Z">
+      <class name="com.ctsi.test.MessageCenter">
+        <test-method status="PASS" signature="setBaseURL()[pri:0, instance:com.ctsi.test.MessageCenter@64633e5e]" name="setBaseURL" is-config="true" duration-ms="3501" started-at="2013-09-18T16:46:06Z" finished-at="2013-09-18T16:46:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBaseURL -->
-        <test-method status="PASS" signature="verifyHomepageTitle()[pri:0, instance:com.ctsi.testlink.DemoSelenium@27b15692]" name="verifyHomepageTitle" duration-ms="14212" started-at="2013-08-30T15:20:34Z" finished-at="2013-08-30T15:20:48Z">
+        <test-method status="PASS" signature="verifyHomepageTitle()[pri:0, instance:com.ctsi.test.MessageCenter@64633e5e]" name="verifyHomepageTitle" duration-ms="3212" started-at="2013-09-18T16:46:09Z" description="登录外勤助手主页面" finished-at="2013-09-18T16:46:12Z">
           <reporter-output>
-            <line>
-              <![CDATA[测试用例：登录外勤助手]]>
-            </line>
-            <line>
-              <![CDATA[测试步骤1：输入用户名]]>
-            </line>
-            <line>
-              <![CDATA[测试步骤2：输入密码]]>
-            </line>
-            <line>
-              <![CDATA[测试步骤3：选择区域]]>
-            </line>
-            <line>
-              <![CDATA[测试步骤4：输入验证码]]>
-            </line>
-            <line>
-              <![CDATA[测试步骤5：点击登录按钮]]>
-            </line>
             <line>
               <![CDATA[[开始验证]:验证外勤助手主页面标题是否正确]]>
             </line>
@@ -65,15 +35,77 @@
               <![CDATA[[验证通过]: 期望值 :<中国电信外勤助手> 实际值:<中国电信外勤助手>]]>
             </line>
             <line>
-              <![CDATA[登录外勤助手成功]]>
+              <![CDATA[登录系统成功]]>
             </line>
           </reporter-output>
         </test-method> <!-- verifyHomepageTitle -->
-        <test-method status="PASS" signature="endSession()[pri:0, instance:com.ctsi.testlink.DemoSelenium@27b15692]" name="endSession" is-config="true" duration-ms="1064" started-at="2013-08-30T15:20:48Z" finished-at="2013-08-30T15:20:49Z">
+        <test-method status="FAIL" signature="writeSMS()[pri:0, instance:com.ctsi.test.MessageCenter@64633e5e]" name="writeSMS" duration-ms="4365" started-at="2013-09-18T16:46:12Z" description="选择某人写短信" finished-at="2013-09-18T16:46:17Z">
+          <exception class="org.openqa.selenium.StaleElementReferenceException">
+            <message>
+              <![CDATA[Element is no longer valid (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 59 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '2.33.0', revision: '4e90c97', time: '2013-05-22 15:32:38'
+System info: os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.6.0_43'
+Session ID: b6b18335-2706-4483-b718-5ccfea53e5a3
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities [{platform=WINDOWS, elementScrollBehavior=0, javascriptEnabled=true, enablePersistentHover=true, ignoreZoomSetting=false, browserName=internet explorer, enableElementCacheCleanup=true, unexpectedAlertBehaviour=dismiss, version=9, cssSelectorsEnabled=true, ignoreProtectedModeSettings=true, requireWindowFocus=false, initialBrowserUrl=, handlesAlerts=true, nativeEvents=true, browserAttachTimeout=0, takesScreenshot=true}]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.StaleElementReferenceException: Element is no longer valid (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 59 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '2.33.0', revision: '4e90c97', time: '2013-05-22 15:32:38'
+System info: os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.6.0_43'
+Session ID: b6b18335-2706-4483-b718-5ccfea53e5a3
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities [{platform=WINDOWS, elementScrollBehavior=0, javascriptEnabled=true, enablePersistentHover=true, ignoreZoomSetting=false, browserName=internet explorer, enableElementCacheCleanup=true, unexpectedAlertBehaviour=dismiss, version=9, cssSelectorsEnabled=true, ignoreProtectedModeSettings=true, requireWindowFocus=false, initialBrowserUrl=, handlesAlerts=true, nativeEvents=true, browserAttachTimeout=0, takesScreenshot=true}]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:191)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:145)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:554)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:268)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:79)
+	at com.ctsi.tools.Wait.waitByXpath(Wait.java:38)
+	at com.ctsi.test.MessageCenter.writeSMS(MessageCenter.java:102)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:335)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:330)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- writeSMS -->
+        <test-method status="PASS" signature="endSession()[pri:0, instance:com.ctsi.test.MessageCenter@64633e5e]" name="endSession" is-config="true" duration-ms="1092" started-at="2013-09-18T16:46:17Z" finished-at="2013-09-18T16:46:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endSession -->
-      </class> <!-- com.ctsi.testlink.DemoSelenium -->
+      </class> <!-- com.ctsi.test.MessageCenter -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

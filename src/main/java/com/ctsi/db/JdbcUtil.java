@@ -3,6 +3,9 @@ package com.ctsi.db;
 import java.sql.*;
 
 public class JdbcUtil {
+	
+	public static ResultSet rs;
+	public static Statement stmt;
 	static{
 		   String driverName = 
 			  "oracle.jdbc.driver.OracleDriver";
@@ -18,7 +21,8 @@ public class JdbcUtil {
 		   String pwd = "mtstest";
 		   Connection con = null;
 		   try{
-		      con = DriverManager.getConnection(url,usr,pwd);		
+		      con = DriverManager.getConnection(url,usr,pwd);
+		      stmt=con.createStatement();
 		   }catch(Exception e){
 		      System.out.println(e.getMessage());
 		   }
@@ -70,4 +74,28 @@ public class JdbcUtil {
 			   System.out.println(e.getMessage());
 			}
 		}
+		
+		public static String  getLocatorXpath(String locatorname){
+			String xpath = null;			
+			try {
+				rs =stmt.executeQuery("select * from SMS where id='"+locatorname+"'");
+				while (rs.next()) { 
+
+					xpath = rs.getString("CONTENT");
+					System.out.println(xpath);
+					
+					}
+					rs.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return xpath;
+		}
+		
+		public static void main(String[] args){	
+		 getConnection();
+		 getLocatorXpath("4089e4cc3af8b464013afdf676dc0099");
+		 
+	 }
 }

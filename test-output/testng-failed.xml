@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.ctsi.testlink.DemoSelenium">
+      <class name="com.ctsi.test.MessageCenter">
         <methods>
           <include name="endSession"/>
-          <include name="verifyHomepageTitle"/>
+          <include name="writeSMS"/>
           <include name="setBaseURL"/>
         </methods>
-      </class> <!-- com.ctsi.testlink.DemoSelenium -->
+      </class> <!-- com.ctsi.test.MessageCenter -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
