@@ -15,6 +15,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.ctsi.db.MysqlUtil;
 import com.ctsi.page.Login;
 import com.ctsi.tools.BaseCase;
 import com.ctsi.tools.Frame;
@@ -35,6 +36,7 @@ public class MessageCenter extends BaseCase{
 	private int i = 0;
 	private String prefix = "mtsTest_";	
 	public static Logger logger = Logger.getLogger(MessageCenter.class);
+	private MysqlUtil mq = new MysqlUtil("message_system");
 	
   //初始化对象
   @BeforeClass
@@ -53,6 +55,7 @@ public class MessageCenter extends BaseCase{
 	  driver.manage().window().maximize();	  
 	  driver.get(baseurl);
 	  logger.info("Selenium instance started");
+	  mq.conn();
 	  try {
 		res.generateReport();
 	} catch (Exception e) {
@@ -91,36 +94,36 @@ public void verifyHomepageTitle() {
   //写短信
   @Test(groups = { "Message" },priority= 2,description = "选择某人写短信")
 public void writeSMS(){
-	  driver.findElement(By.id("a_topMenu_10")).click();
-	  driver.findElement(By.id("a_leftMenu_item_1013")).click();	
-      driver.switchTo().frame("if_mainPage");
-      driver.findElement(By.id("btn_chooseOutworker")).click();
-      framer.switchFrame("/html/body/div/div[2]/iframe");
-      driver.findElement(By.name("outworkerNumber")).sendKeys("12301270003");
-      waiter.waitByXpath("//*[@id=\"outworker_query\"]");    
-      waiter.waitByXpath("//*[@id=\"worker_tree_2_check\"]");    
-      driver.findElement(By.id("bt_save")).click(); 
+	  driver.findElement(By.id(mq.getLocatorID("message_menu"))).click();
+	  driver.findElement(By.id(mq.getLocatorID("tree_writeSms"))).click();	
+      driver.switchTo().frame(mq.getLocatorXpath("main_iframe"));
+      driver.findElement(By.id(mq.getLocatorID("chose_member"))).click();
+      framer.switchFrame(mq.getLocatorXpath("swith_ifame"));
+      driver.findElement(By.id(mq.getLocatorID("input_phone"))).sendKeys("12301270003");
+      waiter.waitByXpath(mq.getLocatorXpath("query_button"));    
+      waiter.waitByXpath(mq.getLocatorXpath("check_worker"));    
+      driver.findElement(By.id(mq.getLocatorID("sava_button"))).click(); 
       log.put("step1:选择人员", true);
-      framer.switchMainFrame("if_mainPage");
-      driver.findElement(By.id("button")).click();         
-      framer.switchFrame("/html/body/div/div[2]/iframe");
-      driver.findElement(By.xpath("/html/body/div/form/div/div/table/tbody/tr/td/div")).click();
-      driver.findElement(By.id("btSubmit")).click();  
+      framer.switchMainFrame(mq.getLocatorXpath("main_iframe"));
+      driver.findElement(By.id(mq.getLocatorID("chosesms_button"))).click();         
+      framer.switchFrame(mq.getLocatorXpath("swith_ifame"));
+      driver.findElement(By.xpath(mq.getLocatorXpath("chose_sms"))).click();
+      driver.findElement(By.id(mq.getLocatorID("submit"))).click();  
       log.put("step2:选择短信", true);
-      framer.switchMainFrame("if_mainPage");
-      driver.findElement(By.id("obj_content")).sendKeys("中国梦");
+      framer.switchMainFrame(mq.getLocatorXpath("main_iframe"));
+      driver.findElement(By.id(mq.getLocatorID("smscotent"))).sendKeys("中国梦");
       log.put("step3:输入短信内容", true);
-      driver.findElement(By.id("obj_sign")).clear();
-      driver.findElement(By.id("obj_sign")).sendKeys("ctsi");
+      driver.findElement(By.id(mq.getLocatorID("sign_name"))).clear();
+      driver.findElement(By.id(mq.getLocatorID("sign_name"))).sendKeys("ctsi");
       log.put("step4输入签名", true);
-      driver.findElement(By.id("bt_submit")).click();
+      driver.findElement(By.id(mq.getLocatorID("sent_button"))).click();
       log.put("step5:点击发送按钮", true);
  	  waiter.waitForSeconds(1);
       driver.switchTo().defaultContent();
-      assertEquals(driver.findElement(By.xpath("/html/body/div/div[2]/div/div")).getText(),"短信已发送！",
+      assertEquals(driver.findElement(By.xpath(mq.getLocatorXpath("sms_alert"))).getText(),"短信已发送！",
     		  "验证写短信成功后提示框中内容是否正确");
       Log.comment("发送短信成功");
-      waiter.waitByXpath("/html/body/div/div[2]/div/div[2]/a");
+      waiter.waitByXpath(mq.getLocatorXpath("sms_alert_button"));
   }
 /**
   //写通知
